@@ -24,18 +24,18 @@ const Form = ({ currentId, setCurrentId }) => {
 
         if(currentId) {
             dispatch(updatePost(currentId, postData));
+            clear();
         } else {
             dispatch(createPost(postData));
+            clear();
         }
-
-        // Clear input
-        clear();
-    }
+    };
 
     const clear = () => {
         setCurrentId(0);
-        setPostData({creator: '', title: '', message: '', tags: '', selectedFile: '' });
-    }
+        // setPostData({creator: '', title: '', message: '', tags: '', selectedFile: '' });
+        setPostData({ title: '', message: '', tags: '', selectedFile: '' });
+    };
 
     return(
         <Paper className={classes.paper}>

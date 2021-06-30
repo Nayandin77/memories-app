@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = '/api/posts';
+// const url = '/api/posts'; // prod
+const url = "/posts/";  // dev
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);

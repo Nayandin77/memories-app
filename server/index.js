@@ -5,6 +5,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import postRoutes from './routes/posts.js';
+import userRoutes from './routes/users.js';
+
 
 const app = express();
 dotenv.config();
@@ -13,12 +15,20 @@ app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
-//app.use('/posts', postRoutes);
-app.use('/api/posts', postRoutes);
+app.use('/posts', postRoutes); // dev -> localhost
+app.use('/user', userRoutes)
 
+// app.use('/api/posts', postRoutes); // prod -> server
+
+app.get('/', (req, res) => {
+    res.send('Hello to Memories API');
+});
+
+/* // prod
 app.get('/api/', (req, res) => {
     res.send('Hello to Memories API');
-})
+});
+*/
 
 // https://www.mongodb.com/cloud/atlas //
 
