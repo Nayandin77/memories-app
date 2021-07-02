@@ -26,3 +26,7 @@ yarn-error.log*
 ######## Back-end ########
 server/node_modules
 server/.env
+
+######## OLD FILES ########
+old_client/
+old_server/
