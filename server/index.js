@@ -25,8 +25,7 @@ app.get('/api', function(req,res) {
   res.send('hello api');
 })
 
-// const CONNECTION_URL = 'mongodb+srv://nayandin:dennis123@cluster0.lzpxv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-const PORT = process.env.PORT|| 5000;
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.CONNTECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
