@@ -19,7 +19,11 @@ app.use(cors());
 //app.use("/user", userRouter);
 
 app.use('/api/posts', postRoutes);
-app.use("/user", userRouter);
+app.use("/api/user", userRouter);
+
+app.get('/api', function(req,res) {
+  res.send('hello api');
+})
 
 // const CONNECTION_URL = 'mongodb+srv://nayandin:dennis123@cluster0.lzpxv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT|| 5000;
